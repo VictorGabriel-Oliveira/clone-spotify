@@ -26,6 +26,13 @@ export const reducer = (state, aciton)=>{
             }
         }
 
+        case 'SET_PLAYLIST':{
+            return {
+                ...state,
+                playlist: aciton.playlist
+            }
+        }
+
         default:
             return {
                 state
