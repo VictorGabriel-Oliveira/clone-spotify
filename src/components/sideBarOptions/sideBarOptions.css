@@ -1,0 +1,18 @@
+.sideBarOpitions{
+    display: flex;
+    align-items: center;
+}
+.sideBar-links{
+    display: flex;
+    cursor: pointer;
+    color: grey;
+    height: 30px;
+    transition: all ease 0.2s;
+   
+    align-items: center;
+    margin-left: 20px;
+}
+
+.sideBar-links:hover{
+    color: white;
+}
