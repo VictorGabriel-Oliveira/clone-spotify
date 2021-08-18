@@ -3,7 +3,7 @@
 export const initialState = {
     user:null,
     playlist:[],
-    playling:false,
+    playing:false,
     item:null,
     token:null,
     discover_weekly:null
@@ -38,6 +38,20 @@ export const reducer = (state, action)=>{
             return {
                 ... state,
                 discover_weekly : action.discover_weekly
+            }
+        }
+
+        case 'SET_ITEM':{
+            return{
+                ...state,
+                item: action.item
+            }
+        }
+
+        case 'SET_PLAYING':{
+            return {
+                ...state,
+                playing: action.playing
             }
         }
 
