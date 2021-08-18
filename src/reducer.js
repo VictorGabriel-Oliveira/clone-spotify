@@ -1,37 +1,47 @@
-import { type } from "jquery"
+
 
 export const initialState = {
     user:null,
     playlist:[],
     playling:false,
     item:null,
-    token:null
+    token:null,
+    discover_weekly:null
 }
-export const reducer = (state, aciton)=>{
-    console.log(aciton)
+export const reducer = (state, action)=>{
+    console.log(action)
     
-    switch(aciton.type){
+    switch(action.type){
         case "SET_USER" :
             
             return{
                 ...state,
-                user: aciton.user
+                user: action.user
                
             }
 
         case 'SET_TOKEN':{
             return {
                 ...state,
-                token:aciton.token
+                token:action.token
             }
         }
 
         case 'SET_PLAYLIST':{
             return {
                 ...state,
-                playlist: aciton.playlist
+                playlist: action.playlist
             }
         }
+
+        case 'SET_DISCOVER_WEEKLY':{
+            return {
+                ... state,
+                discover_weekly : action.discover_weekly
+            }
+        }
+
+       
 
         default:
             return {
