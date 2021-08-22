@@ -6,7 +6,8 @@ export const initialState = {
     playing:false,
     item:null,
     token:null,
-    discover_weekly:null
+    discover_weekly:null,
+    spotify:null
 }
 export const reducer = (state, action)=>{
     console.log(action)
@@ -55,12 +56,19 @@ export const reducer = (state, action)=>{
             }
         }
 
+        case 'SET_SPOTIFY':{
+            return {
+                ...state,
+                spotify: action.spotify
+            }
+        }
        
 
-        default:
+        default: {
             return {
                 state
             }
+        }
     }
 
     
