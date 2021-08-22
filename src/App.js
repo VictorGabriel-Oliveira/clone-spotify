@@ -41,7 +41,7 @@ function App() {
                 })
             })
 
-          
+            
 
             spotify.getUserPlaylists().then(playlist =>{
                 dispatch({
@@ -50,13 +50,13 @@ function App() {
                 })
             })
 
-            spotify.getPlaylist("37i9dQZEVXcJZyENOWUFo7").then((discover_weekly)=>{
+            spotify.getPlaylist("37i9dQZEVXcKTZ5dccEq7F").then((discover_weekly)=>{
                 dispatch({
                     type:'SET_DISCOVER_WEEKLY',
                     discover_weekly
                 })
             })
-
+            
            
         }
 
