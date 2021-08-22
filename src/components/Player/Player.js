@@ -1,8 +1,18 @@
+import Body from '../Body/Body'
+import Footer from '../Footer/Footer'
+import SideBar from '../SideBar/SideBar'
 import './player.css'
-export function Player(){
+
+export function Player({spotify}){
+    
     return (
-        <h1>
-            wolcome to spotify
-        </h1>
+       <div className="player">
+           <div className="player-body">
+               <SideBar/>
+               <Body spotify={spotify}/>
+           </div>
+           <Footer spotify={spotify}/>
+
+       </div>
     )
 }
