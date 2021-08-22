@@ -11,7 +11,7 @@ export default function SideBarOptions({text , Icon}){
     }
     else{
         return(
-            <div className="sideBarOpitions">
+            <div  className="sideBarOpitions">
                 <p className="sideBar-links">
                     {text} 
                 </p>
