@@ -24,8 +24,8 @@ export default function SideBar(){
             <strong className="sideBar-title"> PLAYLIST</strong>
             <hr></hr>
           {
-              playlist?.items?.map(item => {
-                  return <SideBarOptions text={item.name} />
+              playlist?.items?.map((item )=> {
+                  return <SideBarOptions  text={item.name} />
               })
           }
 
