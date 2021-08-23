@@ -9,68 +9,61 @@ export const initialState = {
     discover_weekly:null,
     spotify:null
 }
+
+const set_states ={
+    SET_USER(state,action){
+        return{
+            ...state,
+            user:action.user
+        }
+    },
+    SET_TOKEN(state,action){
+        console.log( '----> state :',state)
+        return{
+            ...state,
+            token:action.token
+        }
+    },
+    SET_PLAYLIST(state,action){
+        return {
+            ...state,
+            playlist: action.playlist
+        }
+    },
+    SET_DISCOVER_WEEKLY(state,action){
+        return {
+            ... state,
+            discover_weekly : action.discover_weekly
+        }
+    },
+    SET_ITEM(state,action){
+        return{
+            ...state,
+            item: action.item
+        }
+
+    },
+    SET_PLAYING(state,action){
+        return {
+            ...state,
+            playing: action.playing
+        }
+        
+    },
+    SET_SPOTIFY(state,action){
+        return {
+            ...state,
+            spotify: action.spotify
+        }
+    },
+
+    
+
+
+}
+
 export const reducer = (state, action)=>{
-    console.log(action)
-    
-    switch(action.type){
-        case "SET_USER" :
-            
-            return{
-                ...state,
-                user: action.user
-               
-            }
-
-        case 'SET_TOKEN':{
-            return {
-                ...state,
-                token:action.token
-            }
-        }
-
-        case 'SET_PLAYLIST':{
-            return {
-                ...state,
-                playlist: action.playlist
-            }
-        }
-
-        case 'SET_DISCOVER_WEEKLY':{
-            return {
-                ... state,
-                discover_weekly : action.discover_weekly
-            }
-        }
-
-        case 'SET_ITEM':{
-            return{
-                ...state,
-                item: action.item
-            }
-        }
-
-        case 'SET_PLAYING':{
-            return {
-                ...state,
-                playing: action.playing
-            }
-        }
-
-        case 'SET_SPOTIFY':{
-            return {
-                ...state,
-                spotify: action.spotify
-            }
-        }
-       
-
-        default: {
-            return {
-                state
-            }
-        }
-    }
-
-    
-    
+   
+    return set_states[action.type](state,action)
+   
 }
