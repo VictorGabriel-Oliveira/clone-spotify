@@ -7,10 +7,6 @@ import './body.css'
 export default function Body({spotify}){
     const [{discover_weekly}, dispatch] = useDataLayerValue()
 
-   
-
-    
-
     const playSong = (id) => {
         spotify.play({
             uris: [`spotify:track:${id}`],
@@ -29,7 +25,7 @@ export default function Body({spotify}){
 
     function playPlaylist () {
         
-        /*spotify.play({
+        spotify.play({
             context_uri: `spotify:playlist:37i9dQZEVXcKTZ5dccEq7F`
         }).then( spotify.getMyCurrentPlayingTrack().then( res =>{
                 dispatch({
@@ -37,20 +33,13 @@ export default function Body({spotify}){
                     item: res.item
                 })
                 dispatch({
-                    tipe:"SET_PLAYING",
+                    type:"SET_PLAYING",
                     playing:true
                 })
             })
         )
-        */
-
-        alert("Não estar funcionando por enquanto")
-
     }
 
-      
-    
-    
     return (
         <div className="body">
             <Header spotify={spotify}/>
