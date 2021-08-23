@@ -11,9 +11,8 @@ const spotify = new SpotifyWebApi()
 
 function App() {
     const [token, setToken] = useState('')
-    const [{  user },dispatch] = useDataLayerValue()
+    const [{user},dispatch] = useDataLayerValue()
 
-   
     useEffect(()=>{
 
         const hash = getTokenFromResponse()
@@ -28,20 +27,17 @@ function App() {
                 type:'SET_TOKEN',
                 token:_token
             })
+
             spotify.setAccessToken(_token)
 
-            
-            
             spotify.getMe().then(user =>{
-                
+                console.log(user)
                 dispatch ({ 
                     type: 'SET_USER',
                     user
 
                 })
             })
-
-            
 
             spotify.getUserPlaylists().then(playlist =>{
                 dispatch({
@@ -56,11 +52,8 @@ function App() {
                     discover_weekly
                 })
             })
-            
-           
+                       
         }
-
-         
 
     },[])
 

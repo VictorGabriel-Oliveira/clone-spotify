@@ -5,9 +5,15 @@ const client_id = '64cd5757e2bb47faa7101a47f9a22ad9'
 const client_secret= '462ed21011f543bca22091f880bc50db'
 
 const scopes = [
-    //'  'user-read-recently-playing  user-modify-playback-state,
-   
-    'user-read-private user-read-email user-library-read playlist-read-private user-read-recently-played user-read-playback-state user-modify-playback-state user-top-read user-read-currently-playing'
+   `user-read-private 
+    user-read-email
+    user-library-read
+    playlist-read-private
+    user-read-recently-played
+    user-read-playback-state
+    user-modify-playback-state
+    user-top-read
+    user-read-currently-playing`
 ]
 
 export const getTokenFromResponse = () =>{
