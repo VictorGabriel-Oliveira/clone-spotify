@@ -48,8 +48,8 @@ function App() {
 
             spotify.getPlaylist("37i9dQZEVXcKTZ5dccEq7F").then((discover_weekly)=>{
                 dispatch({
-                    type:'SET_DISCOVER_WEEKLY',
-                    discover_weekly
+                    type: 'SET_CURRENT_PLAYLIST',
+                    current_playlist: discover_weekly
                 })
             })
                        

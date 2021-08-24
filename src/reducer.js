@@ -6,7 +6,7 @@ export const initialState = {
     playing:false,
     item:null,
     token:null,
-    discover_weekly:null,
+    current_playlist:null,
     spotify:null
 }
 
@@ -30,10 +30,10 @@ const set_states ={
             playlist: action.playlist
         }
     },
-    SET_DISCOVER_WEEKLY(state,action){
+    SET_CURRENT_PLAYLIST(state,action){
         return {
             ... state,
-            discover_weekly : action.discover_weekly
+            current_playlist: action.current_playlist
         }
     },
     SET_ITEM(state,action){

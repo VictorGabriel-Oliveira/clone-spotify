@@ -4,9 +4,34 @@ import HomeIcon from '@material-ui/icons/Home';
 import SearchIcon from '@material-ui/icons/Search';
 import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 import { useDataLayerValue } from '../../context/DataLayer';
-export default function SideBar(){
+
+export default function SideBar({spotify}){
 
     const [{playlist}, dispatch] = useDataLayerValue()
+
+    function playPlaylist(id){
+        spotify.play({
+            context_uri: `spotify:playlist:${id}`
+        }).then( 
+            spotify.getPlaylist(id).then(( current_playlist)=>{
+                dispatch({
+                    type:'SET_CURRENT_PLAYLIST',
+                    current_playlist
+                })
+            })
+        ).then(spotify.getMyCurrentPlayingTrack().then( res =>{
+                dispatch({
+                    type: "SET_ITEM",
+                    item: res.item
+                })
+                dispatch({
+                    type:"SET_PLAYING",
+                    playing:true
+                })
+                
+            })
+        )
+    }
 
     return(
         <div className="sidebar">
@@ -25,7 +50,7 @@ export default function SideBar(){
             <hr></hr>
           {
               playlist?.items?.map((item )=> {
-                  return <SideBarOptions  text={item.name} />
+                  return <SideBarOptions playPlaylist={playPlaylist} id={item.id} text={item.name} />
               })
           }
 
