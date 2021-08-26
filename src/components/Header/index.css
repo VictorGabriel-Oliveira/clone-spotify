@@ -6,8 +6,13 @@
 .header-rigth{
     display: flex;
     align-items: center;
+    position: relative;
+    
 }
 .header-left{
+    position: relative;
+}
+.input-conteiner{
     flex: 0.5;
     display: flex;
     background-color: white;
@@ -15,11 +20,36 @@
     border-radius: 30px;
     color: gray;
     align-items: center;
+    width: 300px;
 
 }
-.header-left > input{
+.input-conteiner > input{
     border: none;
     width: 100%;
+   
+}
+input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+  }
+.search-items{
+    position: absolute;
+    max-height: 120px;
+    overflow-y: overlay;
+    width: 300px;
+    background-color:  rgba(0,0,0,1);
+    left: 10px;
+    z-index: 200;
+    
+}
+
+.search-items::-webkit-scrollbar {
+    width: 6px;
+    height: 5px;
+  }
+.search-items::-webkit-scrollbar-thumb{
+    background-color: rgba(225, 225, 225, 0.2);
 }
 .header-rigth > h4{
     margin-left: 10px;

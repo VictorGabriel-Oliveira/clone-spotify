@@ -6,6 +6,13 @@
     padding: 30px;
     overflow-y: overlay;
 }
+.body::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+.body::-webkit-scrollbar-thumb{
+    background-color: rgba(225, 225, 225, 0.2);
+}
 .body-info{
     display: flex;
     align-items: flex-end;
@@ -20,7 +27,16 @@
     flex: 1;
 
 }
+.body-Icons{
+    margin-left: 30px;
+}
 
+.body-Icons > *{
+    cursor: pointer;
+    height: 100px;
+    align-items: center;
+    margin-right: 5px;
+}
 .body-infoText > h2{
     font-size: 48px;
     margin-bottom: 10px;

@@ -8,6 +8,13 @@
     background-color: #040404;
     overflow-y: overlay;
 }
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+.sidebar::-webkit-scrollbar-thumb{
+    background-color: rgba(225, 225, 225, 0.2);
+}
 .sideBar-logo{
     
     width: 200px;
