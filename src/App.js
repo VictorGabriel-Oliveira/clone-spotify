@@ -18,7 +18,7 @@ function App() {
         const hash = getTokenFromResponse()
         window.location.hash = ''
         const _token = hash.access_token
-
+        
         if(_token){
             
             setToken(_token)
@@ -38,6 +38,8 @@ function App() {
 
                 })
             })
+            
+            
 
             spotify.getUserPlaylists().then(playlist =>{
                 dispatch({
@@ -54,7 +56,7 @@ function App() {
             })
                        
         }
-
+        
     },[])
 
     return (

@@ -75,6 +75,17 @@ export default function Footer ({spotify}){
         })
     }
 
+    function handleSetVolume(volume){
+        if(volume){
+            spotify.setVolume(volume).then(
+                ()=>{
+                    console.log(`----> volume setind for : ${volume}`)
+                }
+            )
+        }else(console.log(volume))
+
+    }
+
     return (
         <div className="footer" >
             <div className="footer-left">
@@ -122,10 +133,14 @@ export default function Footer ({spotify}){
 
                     </Grid>
                     <Grid item>
-                        <VolumeDown/>
+                        <VolumeDown  />
                     </Grid>
                     <Grid item xs>
-                        <Slider/>
+                        <Slider 
+                            onClick={(e)=>{
+                                handleSetVolume(e.target.children[2].value)
+                            }}
+                         />
                     </Grid>
                 </Grid>
             </div>
