@@ -6,7 +6,7 @@ export const initialState = {
     token:null,
     current_playlist:null,
     spotify:null,
-    search:null,
+    search:null
     
 }
 
