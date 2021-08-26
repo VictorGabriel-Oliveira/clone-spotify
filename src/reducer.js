@@ -1,5 +1,3 @@
-
-
 export const initialState = {
     user:null,
     playlist:[],
@@ -7,7 +5,9 @@ export const initialState = {
     item:null,
     token:null,
     current_playlist:null,
-    spotify:null
+    spotify:null,
+    search:null,
+    
 }
 
 const set_states ={
@@ -18,7 +18,6 @@ const set_states ={
         }
     },
     SET_TOKEN(state,action){
-        console.log( '----> state :',state)
         return{
             ...state,
             token:action.token
@@ -31,6 +30,7 @@ const set_states ={
         }
     },
     SET_CURRENT_PLAYLIST(state,action){
+        
         return {
             ... state,
             current_playlist: action.current_playlist
@@ -56,14 +56,20 @@ const set_states ={
             spotify: action.spotify
         }
     },
-
-    
-
+    SET_SEARCH(state,action){
+        
+        return{
+            ...state,
+            search:action.search
+        }
+    },
 
 }
 
+
+
 export const reducer = (state, action)=>{
-   
-    return set_states[action.type](state,action)
+    const actions = set_states[action.type]
+    return  actions(state,action)
    
 }
