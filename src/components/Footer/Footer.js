@@ -28,7 +28,7 @@ export default function Footer ({spotify}){
                 playing: state.is_playing
             })
         })
-
+       
     }, [item])
 
     function handlePlayPause (){
@@ -78,12 +78,9 @@ export default function Footer ({spotify}){
     function handleSetVolume(volume){
         if(volume){
             spotify.setVolume(volume).then(
-                ()=>{
-                    console.log(`----> volume setind for : ${volume}`)
-                }
+            
             )
-        }else(console.log(volume))
-
+        }
     }
 
     return (
@@ -136,7 +133,8 @@ export default function Footer ({spotify}){
                         <VolumeDown  />
                     </Grid>
                     <Grid item xs>
-                        <Slider 
+                        <Slider  defaultValue='100' 
+                        
                             onClick={(e)=>{
                                 handleSetVolume(e.target.children[2].value)
                             }}
