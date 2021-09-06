@@ -13,7 +13,8 @@ const scopes = [
     user-read-playback-state
     user-modify-playback-state
     user-top-read
-    user-read-currently-playing`
+    user-read-currently-playing
+    streaming`
 ]
 
 export const getTokenFromResponse = () =>{

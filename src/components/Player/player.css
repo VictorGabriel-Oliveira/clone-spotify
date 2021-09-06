@@ -1,3 +1,6 @@
 .player-body{
     display:flex;
 }
+.PlayerRSWP{
+    display: none;
+}
